@@ -1,4 +1,4 @@
-# A presentation on python open source projects
+# A presentation on creating python open source projects
 
 See [https://cwant.github.io/python-os-presentation/#/](https://cwant.github.io/python-os-presentation/#/) for the rendered presentation.
 
