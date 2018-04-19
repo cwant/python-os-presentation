@@ -70,63 +70,95 @@
 					<p>
 						Why not use ... math? (and Python)
 					</p>
-          <div style='height:300px;'>
-					  <img src="assets/good_klein.png">
-          </div>
 				</section>
 
 				<section>
 					<h2>Requirements</h2>
+          <ul>
+            <li>Give a math formula (a function in python that has two args u,v that returns a point in 3D space)</li>
+            <li>Give u_num and v_num parameters to control the number of hexagons in each direction</li>
+            <li>Topologically air-tight meshes</li>
+          </ul>
 				</section>
 
 				<section>
 					<h2>Proof of Concept</h2>
+          <div style='height:300px;'>
+					  <img src="assets/good_klein.png">
+          </div>
+          <p>The code has two classes 'Tile' and 'Tessagon' (generates the tiles)</p>
 				</section>
 
 				<section>
 					<h2>Why Open Source?</h2>
+          <ul>
+            <li>It's important to give back</li>
+            <li>Reputational credit has more value than the likely
+              monetary outcome ($0 earned at my Shapeways store to date)</li>
+          </ul>
 				</section>
 
 				<section>
 					<h2>Github</h2>
+          <div style='height:400px;'>
+					  <img src="assets/github-initial.png">
+          </div>
 				</section>
 
 				<section>
 					<h2>Refactor</h2>
+          <p>Discuss OOP and Triangle meshes</p>
 				</section>
 
 				<section>
-					<h2>Expand functionality</h2>
+          <section>
+					  <h2>Expand functionality</h2>
+          </section>
+          <section>
+            <p>Discuss dozens of other classes, rotational meshes, etc</p>
+          </section>
+          <section>
+            <p>Discuss the change in dir structure</p>
+          </section>
+          <section>
+            <p>Discuss Hexagonal Architecture to handle different
+              packages</p>
+          </section>
 				</section>
 
 				<section>
-					<h2>Branching</h2>
+					<h2>Branching and releases</h2>
+          <p>Discuss dev branch, master branches and releases</p>
 				</section>
 
 				<section>
-					<h2>Pull Requests, rebasing, squashing</h2>
+					<h2>Feature branches, pull requests, rebasing, squashing</h2>
 				</section>
 
 				<section>
 					<h2>Linting & PEP8</h2>
+          <p>Discuss flake8 </p>
 				</section>
 
 				<section>
 					<h2>Test suite</h2>
+          <p>Discuss pytest</p>
 				</section>
 
 				<section>
 					<h2>Continuous Integration</h2>
+          <p>Discuss travis setup</p>
 				</section>
 
 				<section>
 					<h2>Re-structuring</h2>
+          <p>Discuss change in directory structure</p>
 				</section>
 
 				<section>
 				  <section>
 					  <h2>Packaging & Distribution</h2>
-            https://packaging.python.org/tutorials/distributing-packages/
+            <a href="https://packaging.python.org/tutorials/distributing-packages/">https://packaging.python.org/tutorials/distributing-packages/</a>
 				  </section>
 				  <section>
 					  <h3>setup.py</h3>
@@ -142,21 +174,54 @@
 				  </section>
 				  <section>
 					  <h3>pypi</h3>
-            get an account on both regular and test site
+            <p>Get an account on both regular and test site</p>
+            <p><a href="https://pypi.org">https://pypi.org</a></p>
+            <p><a href="https://test.pypi.org">https://test.pypi.org</a></p>
+				  </section>
+				  <section>
+            <p>~/.pypirc</p>
+            <pre><code data-trim>
+                [distutils]
+                index-servers=
+                    pypi
+                    testpypi
+
+                [pypi]
+                username = cwant
+
+                [testpypi]
+                repository = https://test.pypi.org/legacy/
+                username = cwant
+            </code></pre>
 				  </section>
 				  <section>
 					  <h3>twine</h3>
-            twine upload dist/*
+            <p>Upload to test pypi ...</p>
+            <pre><code data-trim>
+                twine upload --repository testpypi dist/*
+            </code></pre>
+            <p>(Password required)</p>
 				  </section>
+
 				  <section>
 					  <h3>twine</h3>
-            twine upload dist/*
+            <p>... or to real pypi</p>
+            <pre><code data-trim>
+                twine upload dist/*
+            </code></pre>
+            <p>(Password required)</p>
 				  </section>
+
 				  <section>
-					  <h3>https://pypi.org/project/tessagon/</h3>
+					  <p><a href="https://pypi.org/project/tessagon">
+              https://pypi.org/project/tessagon
+            </a></p>
             <div style='height:300px;'>
 	  				  <img src="assets/pypi-tessagon.png">
             </div>
+            <pre><code data-trim>
+               pip3 install tessagon
+            </code></pre>
 				  </section>
 				</section>
 
