@@ -90,8 +90,16 @@
           <ul>
             <li>Give a math formula (a function in python that has two args u,v that returns a point in 3D space)</li>
             <li>Give u_num and v_num parameters to control the number of hexagons in each direction</li>
-            <li>Topologically air-tight meshes</li>
+            <li>Topologically correct meshes (note: Klein bottle's are not 'air-tight')</li>
           </ul>
+				</section>
+
+				<section>
+					<h2>Design</h2>
+          <div style='height:300px;'>
+					  <img src="assets/tile_tessagon.png">
+          </div>
+          <p>The code has two classes 'Tile' and 'Tessagon' (generates the tiles)</p>
 				</section>
 
 				<section>
@@ -99,7 +107,6 @@
           <div style='height:300px;'>
 					  <img src="assets/good_klein.png">
           </div>
-          <p>The code has two classes 'Tile' and 'Tessagon' (generates the tiles)</p>
 				</section>
 
 				<section>
@@ -116,11 +123,43 @@
           <div style='height:400px;'>
 					  <img src="assets/github-initial.png">
           </div>
+          <p>Initial commit is one python file that has both classes, and a demo blender file.</p>
+
 				</section>
 
 				<section>
-					<h2>Refactor</h2>
-          <p>Discuss OOP and Triangle meshes</p>
+					<h2>Scope creep</h2>
+          <div style='height:300px;'>
+					  <img src="assets/tri_tile_tessagon.png">
+          </div>
+
+          <p>It I can do this for hexagons, surely I can do this for other tiling types?</p>
+				</section>
+
+				<section>
+					<h2>OOP Refactor</h2>
+          <p>Parent classes: Tile, Tessagon</p>
+          <p>Subclasses:</p>
+					<table>
+						<tbody>
+							<tr>
+								<td>HexTile, HexTessagon</td>
+								<td>TriTile, TriTessagon</td>
+							</tr>
+							<tr>
+								<td>
+                  <div style='height:200px;'>
+					          <img src="assets/hex_tessagon.png">
+                  </div>
+                </td>
+								<td>
+                  <div style='height:200px;'>
+					          <img src="assets/tri_tessagon.png">
+                  </div>
+                </td>
+							</tr>
+						</tbody>
+					</table>
 				</section>
 
 				<section>
