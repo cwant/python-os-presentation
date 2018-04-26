@@ -49,6 +49,28 @@
 				</section>
 
 				<section>
+					<h2>Goal</h2>
+          <ul>
+  					<li>
+              Discuss a hobby project I created
+					  </li>
+  					<li>
+              Discuss why I made it open source
+					  </li>
+  					<li>
+              Discuss some of the choices I made and why I made them
+					  </li>
+  					<li>
+              Discuss some of the tools I used
+					  </li>
+  					<li>
+              Discuss what I would do different next time
+					  </li>
+          </ul>
+				</section>
+
+
+				<section>
 					<h2>The itch ...</h2>
           <p>I wanted to use Blender to make a Klein bottle tiled with hexagons (a la Bathsheba Grossman)</p>
           <div style='height:300px;'>
@@ -81,17 +103,18 @@
 				<section>
 					<h2>Revised Idea</h2>
 					<p>
-						We'll have to write our own software to make the hexagons.
+						I really want hexagons, so I'll have to write my own software to make them.
 					</p>
 				</section>
 
 				<section>
 					<h2>Requirements</h2>
+          <p>Produce a 3D, topologically correct (air-tight) mesh, tiled with hexagons</p>
           <ul>
-            <li>Give a math formula (a function in python that has two args u,v that returns a point in 3D space)</li>
-            <li>Give u_num and v_num parameters to control the number of hexagons in each direction</li>
-            <li>Topologically correct meshes (note: Klein bottle's are not 'air-tight')</li>
-          </ul>
+            <li>Input a math formula for the surface (a function in python that has two args u,v that returns a point in 3D space)</li>
+            <li>Input u_num, v_num parameters to control the number of hexagons in each direction</li>
+            <li>Handle cyclic domains (objects that wrap, like cylinders, torii, Klein bottles, etc.)
+          </ul> 
 				</section>
 
 				<section>
@@ -113,17 +136,23 @@
 					<h2>Why Open Source?</h2>
           <ul>
             <li>It's important to give back</li>
-            <li>Reputational credit has more value than the likely
-              monetary outcome ($0 earned at my Shapeways store to date)</li>
+            <li>Makes it easy to install on any future machines I might own</li>
+            <li>Reputational credit has more value than the amount of money I would likely make with the script (I've earned $0 at my Shapeways store since creating it over four years ago)</li>
           </ul>
 				</section>
 
 				<section>
-					<h2>Github</h2>
+					<h2>Tessagon on Github</h2>
           <div style='height:400px;'>
 					  <img src="assets/github-initial.png">
           </div>
           <p>Initial commit is one python file that has both classes, and a demo blender file.</p>
+
+				</section>
+
+				<section>
+					<h2>DONE!</h2>
+          <p>Or am I ... ?</p>
 
 				</section>
 
@@ -133,7 +162,7 @@
 					  <img src="assets/tri_tile_tessagon.png">
           </div>
 
-          <p>It I can do this for hexagons, surely I can do this for other tiling types?</p>
+          <p>If I can do this for hexagons, surely I can do this for a triangle tiling?</p>
 				</section>
 
 				<section>
@@ -166,9 +195,102 @@
           <section>
 					  <h2>Expand functionality</h2>
           </section>
+
+ 				  <section>
+				  	<h2>25-ish subclasses added ...</h2>
+				  	<table>
+				  		<tbody>
+				  			<tr>
+				  				<td>
+                    <div style='height:200px;'>
+				  	          <img src="assets/dodeca_tessagon.png">
+                    </div>
+                  </td>
+				  				<td>
+                    <div style='height:200px;'>
+				  	          <img src="assets/dissected_triangle_tessagon.png">
+                    </div>
+                  </td>
+				  			</tr>
+				  			<tr>
+				  				<td>
+                    <div style='height:200px;'>
+				  	          <img src="assets/pythagorean_tessagon.png">
+                    </div>
+                  </td>
+				  				<td>
+                    <div style='height:200px;'>
+				  	          <img src="assets/floret_tessagon.png">
+                    </div>
+                  </td>
+				  			</tr>
+				  		</tbody>
+				  	</table>
+				  </section>
+
+				  <section>
+				  	<h2>Color Patterns</h2>
+				  	<table>
+				  		<tbody>
+				  			<tr>
+				  				<td>
+                    <div style='height:200px;'>
+				  	          <img src="assets/tri_tessagon_color2.png">
+                    </div>
+                  </td>
+				  				<td>
+                    <div style='height:200px;'>
+				  	          <img src="assets/square_tessagon_color8.png">
+                    </div>
+                  </td>
+				  			</tr>
+				  			<tr>
+				  				<td>
+                    <div style='height:200px;'>
+				  	          <img src="assets/dissected_square_tessagon_color2.png">
+                    </div>
+                  </td>
+				  				<td>
+                    <div style='height:200px;'>
+				  	          <img src="assets/floret_tessagon_color3.png">
+                    </div>
+                  </td>
+				  			</tr>
+				  		</tbody>
+				  	</table>
+				  </section>
+
+				  <section>
+				  	<h2>Rotation of Tilings</h2>
+            <div style='height:300px;'>
+				  	  <img src="assets/brick_tessagon.png">
+            </div>
+				  </section>
+
+
           <section>
-            <p>Discuss dozens of other classes, rotational meshes, etc</p>
+				  	<h2>Automation of documentation</h2>
+            <p>A script that runs in Blender generates screenshots/thumbs/markdown</p>
+				  	<table>
+				  		<tbody>
+				  			<tr>
+                  <td style='vertical-align: middle;'>
+                    <div style='height:300px;'>
+				  	          <img src="assets/documentation_script_code.png">
+                    </div>
+                  </td>
+				  				<td style='vertical-align: middle;'>
+                    <div style='height:300px;'>
+				  	          <img src="assets/documentation_script.png">
+                    </div>
+                  </td>
+				  			</tr>
+				  		</tbody>
+				  	</table>
           </section>
+
+
+
           <section>
             <p>Discuss the change in dir structure</p>
           </section>
