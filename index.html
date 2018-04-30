@@ -320,8 +320,63 @@
 				</section>
 
 				<section>
-					<h2>Continuous Integration</h2>
-          <p>Discuss travis setup</p>
+  				<section>
+  					<h2>Continuous Integration</h2>
+            <p>Ensure that code coming into the project is
+              able to merge and passes project standards</p>
+            <p>For tessagon, we run the test suite and the linting</p>
+  				</section>
+  				<section>
+  					<h2>Travis CI</h2>
+            <p>
+              <a href="https://travis-ci.org/">https://travis-ci.org/</a>
+            </p>
+            <ul>
+              <li>Free account</li>
+              <li>Integrates with Github</li>
+            </ul>
+  				</section>
+  				<section>
+  					<h2>Github project setup</h2>
+            <div style='height:300px;'>
+				  	  <img src="assets/travis_tessagon_setup.png">
+            </div>
+  				</section>
+  				<section>
+            <p>.travis.yml</p>
+            <pre><code data-trim>
+              os: linux
+              sudo: false
+              language: python
+
+              matrix:
+                include:
+                  - python: 3.6
+                  - python: 3.5
+              install:
+                - pip install flake8
+              script:
+                - pytest
+                - flake8 --verbose
+            </code></pre>
+  				</section>
+  				<section>
+  					<p>Pull request</p>
+            <div style='height:500px;'>
+				  	  <img src="assets/travis_tessagon_pr.png">
+            </div>
+  				</section>
+  				<section>
+            <div style='height:500px;'>
+				  	  <img src="assets/travis_tessagon_pr_pass.png">
+            </div>
+  				</section>
+  				<section>
+  					<p>Builds</p>
+            <div style='height:500px;'>
+				  	  <img src="assets/travis_tessagon_builds.png">
+            </div>
+  				</section>
 				</section>
 
 				<section>
