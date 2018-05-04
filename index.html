@@ -101,9 +101,9 @@
 				</section>
 
 				<section>
-					<h2>Revised Idea</h2>
+					<h2>BUT ... BUT I WANT HEXAGONS!!!</h2>
 					<p>
-						I really want hexagons, so I'll have to write my own software to make them.
+					  Can't find a tool that does this, so I'll have to write my own software to make them.
 					</p>
 				</section>
 
@@ -157,47 +157,48 @@
 				</section>
 
 				<section>
-					<h2>Scope creep</h2>
-          <div style='height:300px;'>
-					  <img src="assets/tri_tile_tessagon.png">
-          </div>
+				  <section>
+					  <h2>Scope creep</h2>
+				  </section>
 
-          <p>If I can do this for hexagons, surely I can do this for a triangle tiling?</p>
-				</section>
+				  <section>
+            <div style='height:300px;'>
+					    <img src="assets/tri_tile_tessagon.png">
+            </div>
 
-				<section>
-					<h2>OOP Refactor</h2>
-          <p>Parent classes: Tile, Tessagon</p>
-          <p>Subclasses:</p>
-					<table>
-						<tbody>
-							<tr>
-								<td>HexTile, HexTessagon</td>
-								<td>TriTile, TriTessagon</td>
-							</tr>
-							<tr>
-								<td>
-                  <div style='height:200px;'>
-					          <img src="assets/hex_tessagon.png">
-                  </div>
-                </td>
-								<td>
-                  <div style='height:200px;'>
-					          <img src="assets/tri_tessagon.png">
-                  </div>
-                </td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
+            <p>If I can do this for hexagons, surely I can do this
+              for a triangle tiling?</p>
+				  </section>
 
-				<section>
-          <section>
-					  <h2>Expand functionality</h2>
-          </section>
+				  <section>
+					  <h2>OOP Refactor</h2>
+            <p>Parent classes: Tile, Tessagon</p>
+            <p>Subclasses:</p>
+					  <table>
+						  <tbody>
+							  <tr>
+								  <td>HexTile, HexTessagon</td>
+								  <td>TriTile, TriTessagon</td>
+							  </tr>
+							  <tr>
+								  <td>
+                    <div style='height:200px;'>
+					            <img src="assets/hex_tessagon.png">
+                    </div>
+                  </td>
+								  <td>
+                    <div style='height:200px;'>
+					            <img src="assets/tri_tessagon.png">
+                    </div>
+                  </td>
+							  </tr>
+						  </tbody>
+					  </table>
+				  </section>
 
  				  <section>
-				  	<h2>25-ish subclasses added ...</h2>
+            <h2>But I can't stop ... </h2>
+				  	<p>25-ish subclasses added ...</p>
 				  	<table>
 				  		<tbody>
 				  			<tr>
@@ -289,14 +290,10 @@
 				  	</table>
           </section>
 
-
-
-          <section>
-            <p>Discuss the change in dir structure</p>
-          </section>
           <section>
             <h2>Hexagonal Architecture</h2>
-            <p>Created the concept of a generic output 'Adaptor', so that I could use the same code to support both 'Blender' and 'VTK'.</p>
+            <p>This is all just math, so why tie it to Blender?</p>
+            <p>Shimmed a generic output 'Adaptor' to support 'Blender' and 'VTK'.</p>
 
             <pre><code data-trim>
                def add_vert(self, index_keys, ratio_u, ratio_v, **kwargs):
@@ -314,30 +311,94 @@
 				</section>
 
 				<section>
-					<h2>Branching and releases</h2>
-          <p>Discuss dev branch, master branches and releases</p>
+					<h2>Branch structure</h2>
+          <p>Pull requests of feature branches merged into `development`
+            branch as squashed rebases</p>
+          <p>`master` branch for releases only, merging in `development`
+            when the time feels right</p>
 				</section>
 
 				<section>
-					<h2>Feature branches, pull requests, rebasing, squashing</h2>
-				</section>
+				  <section>
+					  <h2>Style: PEP8 & Linting</h2>
+            <p>
+              <a href="https://www.python.org/dev/peps/pep-0008/">
+                https://www.python.org/dev/peps/pep-0008/
+              </a>
+            </p>
+            <p>It's bad enough having to read other people's code,
+              let alone having to read code that looks like
+              it was written by three different guys
+            </p>
+				  </section>
+				  <section>
+					  <h2>Linting: Flake8</h2>
+            <pre><code data-trim>
+              pip3 install flake8
+            </code></pre>
 
-				<section>
-					<h2>Linting & PEP8</h2>
-          <p>Discuss flake8 </p>
+            <p><a href="https://stackoverflow.com/questions/8503559/what-is-linting">Stackoverflow</a>: &quot;Linting is the process of running a program
+              that will analyse code for potential errors.&quot;</p>
+            <p>Flake8 looks for violations of PEP8</p>
+				  </section>
+				  <section>
+            <p>Before ...</p>
+            <pre><code data-trim>
+$ flake8 pythagorean_tessagon.py
+pythagorean_tessagon.py:22:1: E302 expected 2 blank lines, found 1
+pythagorean_tessagon.py:23:3: E111 indentation is not a multiple of four
+pythagorean_tessagon.py:25:13: E201 whitespace after '{'
+...
+            </code></pre>
+				  </section>
+				  <section>
+            <p>... after</p>
+            <pre><code data-trim>
+$ flake8 pythagorean_tessagon.py
+            </code></pre>
+            <p>(no output == flake8 isn't angry)</p>
+				  </section>
+          <section>
+					  <p>Can turn off specific tests inline</p>
+            <pre><code data-trim>
+import os
+import sys
+
+this_dir = os.path.dirname(os.path.realpath(__file__))
+sys.path.append(this_dir + '/../..')
+
+from tessagon.core.tile import Tile  # noqa: E402
+            </code></pre>
+            <p>E402 corresponds to:
+              <b>module level import not at top of file</b>
+            </p>
+				  </section>
+				  <section>
+            <blockquote cite="https://en.wikiquote.org/wiki/Consistency">A foolish consistency is the hobgoblin of little minds ...
+            </blockquote>
+            <small>Ralph Waldo Emerson</small>
+            
+				  </section>
 				</section>
 
 				<section>
           <section>
 					  <h2>Test suite</h2>
-            <p>Insures the correct operation of the software</p>
+            <p>Ensures the software operates correctly</p>
             <p>When done right, become your "license to make changes"</p>
 				  </section>
 				  <section>
+            <p>pytest</p>
             <pre><code data-trim>
               pip3 install pytest
+              # Measures test coverage
               pip3 install pytest-cov
             </code></pre>
+            <ul>
+              <li>Tests go in the `tests` directory</li>
+              <li>Class names begin with `Test'</li>
+              <li>Methods begin with `test_`</li>
+            </ul>
 				  </section>
 
 
@@ -438,15 +499,28 @@ TOTAL                                  1837   1601    13%
 				</section>
 
 				<section>
-					<h2>Re-structuring</h2>
-          <p>Discuss change in directory structure</p>
-				</section>
-
-				<section>
 				  <section>
 					  <h2>Packaging & Distribution</h2>
             <a href="https://packaging.python.org/tutorials/distributing-packages/">https://packaging.python.org/tutorials/distributing-packages/</a>
 				  </section>
+
+				  <section>
+					  <h2>Re-structuring</h2>
+            <pre><code data-trim>
+.                         .                  
+├── adaptors              ├── demo           
+├── core                  ├── documentation  
+├── demo                  │   └── images     
+├── documentation   ==>   ├── tessagon       
+│   └── images            │   ├── adaptors   
+├── misc                  │   ├── core       
+└── tests                 │   ├── misc       
+    └── core              │   └── types        
+                          └── tests          
+                              └── core
+            </code></pre>            
+				  </section>
+
 				  <section>
 					  <p>setup.py</p>
             <pre><code data-trim>
@@ -507,9 +581,6 @@ TOTAL                                  1837   1601    13%
               '''[1:-1]
             </code></pre>            
 				  </section>
-
-
-
 
 				  <section>
 					  <h3>Build packages</h3>
@@ -626,13 +697,36 @@ TOTAL                                  1837   1601    13%
             </div>
           </section>
           <section>
-            <h3>Should have been following proper packaging rules earlier</h3>
+            <h3>Should have been following proper packaging structure earlier</h3>
           </section>
 				</section>
 
         <section>
 					<h2>Thanks for listening!</h2>
           <p>Questions?</p>
+<dl>
+<dt>This presentation</dt>
+<dd>
+<a href="https://cwant.github.io/python-os-presentation">
+  <small>https://cwant.github.io/python-os-presentation</small>
+</a>
+</dd>
+<dt>Slides source</dt>
+<dd>
+<a href="https://github.com/cwant/python-os-presentation">
+  <small>https://github.com/cwant/python-os-presentation</small>
+</a>
+</dd>
+<dt>Tessagon</dt>
+<dd>
+<a href="https://github.com/cwant/tessagon">
+  <small>https://github.com/cwant/tessagon</small>
+</a><br />
+<a href="https://pypi.org/project/tessagon">
+  <small>https://pypi.org/project/tessagon</small>
+</dd>
+</dl>
+
         </section>
 
 			</div>
