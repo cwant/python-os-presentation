@@ -771,6 +771,18 @@ TOTAL                                  1837   1601    13%
 
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
+        // I hate up/down/left/right, just use next/prev
+        keyboard: {
+          37: 'prev',
+          38: 'prev',
+          39: 'next',
+          40: 'next',
+
+          72: 'prev',
+          74: 'next',
+          75: 'prev',
+          76: 'next'
+        },
 				controls: true,
 				progress: true,
 				history: true,
