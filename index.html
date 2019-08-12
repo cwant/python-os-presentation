@@ -398,6 +398,11 @@
 				</section>
 
 				<section>
+					<h2>Sustainability</h2>
+          <p>I wanted this project to be set up to have street cred, and I wanted to ensure that it was successful in the long term</p>
+				</section>
+
+				<section>
 					<h2>Branch structure</h2>
           <p>Pull requests of feature branches merged into `development`
             branch as squashed rebases</p>
@@ -490,7 +495,7 @@ from tessagon.core.tile import Tile  # noqa: E402
 
 
 				  <section>
-            <p>Only 14 tests (yikes)</p>
+            <p>Only 25 tests (yikes)</p>
             <pre><code data-trim>
 class TestAbstractTile(CoreTestsBase):
     def test_u_range_v_range_params(self):
@@ -515,11 +520,11 @@ Name                                  Stmts   Miss  Cover
 tessagon/__init__.py                      0      0   100%
 tessagon/adaptors/__init__.py             0      0   100%
 tessagon/adaptors/blender_adaptor.py     18     18     0%
-tessagon/adaptors/vtk_adaptor.py         39     39     0%
+tessagon/adaptors/list_adaptor.py        23      0   100%
 [SNIP]
-tessagon/types/zig_zag_tessagon.py       55     55     0%
+tessagon/types/zig_zag_tessagon.py       58     46    21%
 ---------------------------------------------------------
-TOTAL                                  1837   1601    13%
+TOTAL                                  2010   1276    37%
             </code></pre>
             <p>(... more yikes)</p>
 				  </section>
